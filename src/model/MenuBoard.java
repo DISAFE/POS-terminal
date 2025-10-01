@@ -5,15 +5,17 @@ import java.util.ArrayList;
 /**
  * 메뉴판 클래스 입니다
  * 메뉴 추가, 조회, 업데이트, 삭제 기능을 지원할 예정입니다.
+ * 싱글톤 패턴으로 접근 가능합니다. 외부에서 새로운 객체를 생성할 수 없습니다.
  *
  * @author 강규빈
  * @version 1.0
  * @since 2025-09-27
  */
 public class MenuBoard {
+    public static MenuBoard INSTANCE = new MenuBoard();
     private ArrayList<Menu> menus;
 
-    public MenuBoard() { this.menus = new ArrayList<>(); }
+    private MenuBoard() { this.menus = new ArrayList<>(); }
 
     /**
      * 새로운 메뉴를 생성하는 메소드입니다.
